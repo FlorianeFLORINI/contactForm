@@ -1,0 +1,44 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block body %}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h3>Liste des questions à traiter</h3>
+
+            {% for question in listQuest %}
+                <form action="{{ path('checkMessage', {'id': question.id}) }}" method="post">
+                    <ul class="list-unstyled">
+                            <div class="alert alert-dark">
+                                <li><input onchange="this.form.submit()" type="checkbox" name="question">{{ question.date|date('d-m-Y') }}</li>
+                                <li>Nom : {{ question.nom }}</li>
+                                <li>Prénom : {{ question.prenom }}</li>
+                                <li>Mail : {{ question.email }}</li>
+                                <li>Questions : {{ question.demande }}</li>
+                            </div>
+                    </ul>
+                </form>
+            {% endfor %}
+        </div>
+
+
+        <div class="col-6">
+            <h3>Liste des questions traitées</h3>
+
+            {% for questionLu in listQuestLu %}
+                <form action="{{ path('nonCheckMessage', {'id': questionLu.id}) }}" method="post">
+                    <ul class="list-unstyled">
+                        <div class="alert alert-info">
+                            <li>{{questionLu.date|date('d-m-Y') }}</li>
+                            <li>Nom : {{ questionLu.nom }}</li>
+                            <li>Prénom : {{ questionLu.prenom }}</li>
+                            <li>Mail : {{ questionLu.email }}</li>
+                            <li>Questions : {{ questionLu.demande }}</li>
+                            <button class="btn btn-outline-secondary my-2 my-sm-0">Erreur de traitement - Retour à la liste des questions à traiter</button>
+                        </div>
+                    </ul>
+
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

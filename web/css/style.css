@@ -1,0 +1,20 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: lightgrey;
+}
+.nav {
+    display: flex;
+    flex-flow: wrap;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    padding: 1% 0%;
+    background-color: dimgrey;
+}
+
+footer
+{
+    bottom: 0;
+}

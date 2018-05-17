@@ -1,0 +1,17 @@
+contact_user:
+    resource: "@ContactUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+contact_contact:
+    resource: "@ContactContactBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    path: /login
+    defaults: { _controller: ContactUserBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout

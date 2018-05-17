@@ -1,0 +1,19 @@
+formulaire_contact:
+    path:     /
+    defaults: { _controller: ContactContactBundle:Contact:contact }
+
+home:
+    path:     /accueil
+    defaults: { _controller: ContactContactBundle:Contact:askResponse }
+
+list_questions:
+    path:    /listing
+    defaults: { _controller: ContactContactBundle:Contact:liste_questions }
+
+checkMessage:
+    path:    /check/{id}
+    defaults: { _controller: ContactContactBundle:Contact:check }
+
+nonCheckMessage:
+    path:    /noncheck/{id}
+    defaults: { _controller: ContactContactBundle:Contact:nonCheck }
